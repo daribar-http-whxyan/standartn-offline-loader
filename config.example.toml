@@ -1,0 +1,6 @@
+[app]
+    env = "prod"
+
+[pharmacy]
+    token = "TOKEN"
+    pharmacy_code = "PHARMACY_CODE"

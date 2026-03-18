@@ -1,0 +1,8 @@
+.idea/
+*.exe
+__pycache__/
+config.toml
+auto-update.md
+loader-repo-setup.md
+release-guide.md
+main.py
