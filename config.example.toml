@@ -1,6 +1,15 @@
 [app]
-    env = "prod"
+    env = "dev"  # dev | prod
+
+[firebird]
+    host = "localhost"
+    port = 3050
+    database = "C:/Standart-N/base/ztrade.fdb"
+    user = "SYSDBA"
+    password = "masterkey"
+    charset = "WIN1251"
 
 [pharmacy]
-    token = "TOKEN"
-    pharmacy_code = "PHARMACY_CODE"
+    token = "your-token-here"
+    pharmacy_code = ""
+    endpoint = "http://localhost:8080/api/internal/offline-applier/activedocs/register/doc"
