@@ -1,8 +1,8 @@
 @echo off                                                                                                                                                                                     
-chcp 65001 >nul 
+chcp 65001 >nul
 set BRANCH=%~1                                                                                                                                                                                
 if "%BRANCH%"=="" set BRANCH=main
-set DIR=C:\Daribar\standartn-offline
+set DIR=C:\Daribar\standartn-offline                                                                                                                                                          
 set REPO=https://raw.githubusercontent.com/daribar-http-whxyan/standartn-offline-loader
 timeout /t 3 /nobreak >nul
 curl.exe -Lo "%DIR%\standartn-offline.exe" "%REPO%/%BRANCH%/standartn-offline.exe"
