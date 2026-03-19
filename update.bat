@@ -9,8 +9,9 @@ ping -n 6 127.0.0.1 >nul
 for /d %%i in ("%TEMP%\_MEI*") do rd /s /q "%%i" >nul 2>&1
 curl.exe -Lo "%DIR%\standartn-offline.exe" "%REPO%/%BRANCH%/standartn-offline.exe"
 if %errorlevel% neq 0 (
-    echo ERROR: download failed
-    exit /b 1
+  echo ERROR: download failed
+  exit /b 1
 )
+ping -n 4 127.0.0.1 >nul
 start "" "%DIR%\standartn-offline.exe"
 del "%~f0"
