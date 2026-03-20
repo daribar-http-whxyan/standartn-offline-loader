@@ -12,10 +12,12 @@ if %errorlevel% neq 0 (
   echo ERROR: download failed
   exit /b 1
 )
-ping -n 4 127.0.0.1 >nul
-start "" "%DIR%\standartn-offline.exe"
-ping -n 11 127.0.0.1 >nul
-taskkill /f /im standartn-offline.exe >nul 2>&1
-ping -n 20 127.0.0.1 >nul
-start "" "%DIR%\standartn-offline.exe"
-del "%~f0"
+(
+  echo @echo off
+  echo ping -n 4 127.0.0.1 ^>nul
+  echo start "" "%DIR%\standartn-offline.exe"
+  echo ping -n 3 127.0.0.1 ^>nul
+  echo del "%%~f0"
+) > "%DIR%\launcher.bat"
+start /min "" "%DIR%\launcher.bat"
+(goto) 2>nul & del "%~f0"
