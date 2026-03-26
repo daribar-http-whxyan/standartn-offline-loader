@@ -1,0 +1,5 @@
+[app]
+    env = "dev" 
+
+[pharmacy]
+    token = "your-token-here"
