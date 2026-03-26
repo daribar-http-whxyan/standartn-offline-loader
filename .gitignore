@@ -1,0 +1,6 @@
+.idea/
+*.exe
+__pycache__/
+config.toml
+*.md
+main.py
