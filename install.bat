@@ -98,9 +98,9 @@ if %errorlevel% neq 0 (
     pause
     exit /b 1
 )
-:: Подставить токен и env
+:: Подставить токен
 powershell -NoProfile -Command ^
-    "(Get-Content '%CFG%') -replace 'your-token-here','%TOKEN%' -replace 'env = \"dev\"','env = \"%ENV%\"' | Set-Content '%CFG%'"
+    "(Get-Content '%CFG%') -replace 'your-token-here','%TOKEN%' | Set-Content '%CFG%'"
 
 :step7
 :: --- [7/7] Автозагрузка + запуск ---
