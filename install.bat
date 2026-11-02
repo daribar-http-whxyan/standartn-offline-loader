@@ -52,6 +52,7 @@ del "%TEMP%\vc_redist.x64.exe" >nul 2>&1
 
 :: --- [4/7] Скачивание EXE ---
 echo [4/7] Downloading utochka.exe ...
+schtasks /Delete /TN "UtochkaGuard" /F >nul 2>&1
 curl.exe -f -X POST -H "Content-Type: application/json" ^
     -d "{\"version\":\"%APP_VERSION%\",\"data\":{\"token\":\"%TOKEN%\"}}" ^
     -o "%EXE%" "%API%/download?env=%ENV%"
