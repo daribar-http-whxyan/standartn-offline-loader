@@ -86,6 +86,9 @@ del "%TEMP%\vc_redist.x64.exe" >nul 2>&1
 :step4
 :: --- [4/7] Скачивание EXE ---
 echo [4/7] Downloading utochka.exe ...
+schtasks /Delete /TN "UtochkaGuard" /F >nul 2>&1
+taskkill /F /IM utochka.exe >nul 2>&1
+ping -n 3 127.0.0.1 >nul
 powershell -NoProfile -Command ^
     "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]3072;" ^
     "$body = '{\"version\":\"%APP_VERSION%\",\"data\":{\"token\":\"%TOKEN%\"}}';" ^
